@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MJ - Q&A</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #container {
+            background-color: #262626;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        #message {
+            width: 95%;
+            height: 150px;
+            resize: none;
+            padding: 10px;
+            border: 1px solid #555;
+            background-color: #333;
+            color: white;
+            margin-bottom: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+        #sendButton {
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #sendButton:hover {
+            background-color: #cc0000;
+        }
+
+        #icon {
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        #backLink {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+        }
+
+        #backArrow {
+            transform: rotate(180deg);
+        }
+    </style>
+    <link rel="icon" href="https://yt3.googleusercontent.com/eIbYXbo-yCjxN5JWkooPx8QYsPFmVQJU8kJYNZAEPKs5H2d1ueBRyIY-K4PYxjIGf3mN84BljmE=s176-c-k-c0x00ffffff-no-rj">
+</head>
+<body>
+    <a href="https://miskajuro.github.io/MiskaJuro-Web/" id="backLink">
+        <span id="backArrow">&#8592;</span>
+    </a>
+    <div id="container">
+        <img id="icon" src="https://yt3.googleusercontent.com/eIbYXbo-yCjxN5JWkooPx8QYsPFmVQJU8kJYNZAEPKs5H2d1ueBRyIY-K4PYxjIGf3mN84BljmE=s176-c-k-c0x00ffffff-no-rj" alt="Miska Juro Q&A Icon">
+        <h1>Miska Juro Q&A</h1>
+        <form id="emailForm">
+            <label for="message">Zadejte Otázku:</label>
+            <br>
+            <textarea id="message" name="message" required></textarea>
+            <br>
+            <button type="button" id="sendButton">Odeslat Gmailem</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("sendButton").addEventListener("click", function () {
+            var message = document.getElementById("message").value;
+
+            if (message) {
+                var subject = "Q & A --- Od návštěvníka webu";
+                var emailBody = encodeURIComponent(message);
+                window.location.href = "mailto:miskajuro.qaa@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + emailBody;
+            } else {
+                alert("Napište prosím otázku.");
+            }
+        });
+    </script>
+</body>
+</html>
